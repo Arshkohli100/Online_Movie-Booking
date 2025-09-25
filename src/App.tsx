@@ -14,6 +14,10 @@ function App() {
       <Router>
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800">
           <Navbar />
+
+          {/* ✅ Hidden H1 for SEO (Google will see it, users won’t) */}
+          <h1 className="sr-only">CineMax – Online Movie Ticket Booking</h1>
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movie/:id" element={<MovieDetails />} />
