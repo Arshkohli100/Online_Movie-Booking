@@ -22,6 +22,9 @@ const MovieDetails = () => {
 
   const showtimes = ['10:00 AM', '1:00 PM', '4:00 PM', '7:00 PM', '10:00 PM'];
 
+  // Build IMDb URL assuming you have movie.imdbId or build from title
+  const imdbUrl = `https://www.imdb.com/find?q=${encodeURIComponent(movie.title)}`;
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -67,10 +70,24 @@ const MovieDetails = () => {
               </span>
             </div>
 
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">{movie.description}</p>
+            {/* Movie Description */}
+            <p className="text-gray-300 text-lg mb-4 leading-relaxed">{movie.description}</p>
 
+            {/* External IMDb Link */}
+            <p className="mb-6">
+              <a 
+                href={imdbUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300 underline"
+              >
+                View on IMDb
+              </a>
+            </p>
+
+            {/* Showtimes */}
             <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-4">Showtimes</h3>
+              <h2 className="text-2xl font-semibold mb-4">Showtimes</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {showtimes.map((time) => (
                   <Link
@@ -84,6 +101,26 @@ const MovieDetails = () => {
                   </Link>
                 ))}
               </div>
+            </div>
+
+            {/* Social Sharing */}
+            <div className="mb-8 flex space-x-4">
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                Share on Facebook
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=Check out ${encodeURIComponent(movie.title)} on CineMax!`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                Share on Twitter
+              </a>
             </div>
 
             <div className="flex items-center space-x-4">
