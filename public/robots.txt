@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Custom rules
+
+# Common rules
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /assets/
+
+# Sitemap
+Sitemap: https://online-movie-booking-rho.vercel.app/sitemap.xml
