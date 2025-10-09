@@ -19,6 +19,31 @@ const Home = () => {
             <h1 className="text-5xl font-bold mb-4">Welcome to CineMax</h1>
             <p className="text-xl text-gray-200">Book your favorite movies with ease</p>
             <p className="text-lg text-purple-300 mt-2">Owned by Arshdeep Singh Kohli</p>
+
+            {/* SEO-friendly descriptive paragraph */}
+            <p className="max-w-3xl mx-auto text-gray-300 text-center mt-6 px-4 leading-relaxed">
+              CineMax is your go-to platform for booking movie tickets online with ease and convenience. Whether you want to catch the latest blockbusters, timeless classics, or independent films, CineMax has you covered. Enjoy a seamless booking experience with multiple showtime options, real-time seat selection, and secure online payments. Stay updated with trending movies and exclusive offers to make your movie nights unforgettable.
+            </p>
+
+            {/* Social sharing links */}
+            <div className="flex justify-center space-x-4 mt-4">
+              <a
+                href="https://www.facebook.com/sharer/sharer.php?u=https://online-movie-booking-rho.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                Share on Facebook
+              </a>
+              <a
+                href="https://twitter.com/intent/tweet?url=https://online-movie-booking-rho.vercel.app/&text=Book%20your%20movie%20tickets%20online%20at%20CineMax!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                Share on Twitter
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -69,6 +94,19 @@ const Home = () => {
             </div>
           ))}
         </div>
+
+        {/* External link to IMDb */}
+        <p className="text-center text-gray-400 mt-8">
+          Learn more about movies on{' '}
+          <a
+            href="https://www.imdb.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-300"
+          >
+            IMDb
+          </a>.
+        </p>
       </div>
     </div>
   );
